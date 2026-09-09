@@ -1,0 +1,638 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    background: #0b0d0f;
+
+    color: white;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* =========================================
+   AMBIENT LIGHT
+   แสงที่กระจายทั่วห้อง
+========================================= */
+
+.ambient-light {
+    position: fixed;
+
+    width: 700px;
+    height: 700px;
+
+    left: 50%;
+    top: 35%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(255, 207, 90, 0.18);
+
+    filter: blur(150px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.login-page {
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 130px;
+
+    padding: 40px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   LAMP SECTION
+========================================= */
+
+.lamp-section {
+    width: 420px;
+    height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   LAMP
+========================================= */
+
+.lamp {
+    position: relative;
+
+    width: 260px;
+    height: 380px;
+}
+
+
+/* =========================================
+   LAMP SHADE
+========================================= */
+
+.lamp-shade {
+    position: absolute;
+
+    top: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 210px;
+    height: 82px;
+
+    background: #eeeeeb;
+
+    border-radius:
+        50%
+        50%
+        45%
+        45%;
+
+    z-index: 5;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   BULB
+========================================= */
+
+.bulb {
+    position: absolute;
+
+    left: 50%;
+    bottom: -4px;
+
+    transform: translateX(-50%);
+
+    width: 80px;
+    height: 35px;
+
+    background: #6b675c;
+
+    border-radius: 50%;
+
+    opacity: 0.4;
+}
+
+
+/* =========================================
+   LAMP GLOW
+========================================= */
+
+.lamp-glow {
+    position: absolute;
+
+    top: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 224, 130, 0.7) 0%,
+            rgba(255, 210, 90, 0.25) 30%,
+            rgba(255, 190, 60, 0.08) 55%,
+            transparent 75%
+        );
+
+    filter: blur(25px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   LAMP STAND
+========================================= */
+
+.lamp-stand {
+    position: absolute;
+
+    top: 105px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 22px;
+    height: 210px;
+
+    background: #e8e7e1;
+
+    border-radius: 2px;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   LAMP BASE
+========================================= */
+
+.lamp-base {
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    width: 115px;
+    height: 18px;
+
+    background: #e8e7e1;
+
+    border-radius: 20px;
+
+    z-index: 4;
+}
+
+
+/* =========================================
+   PULL STRING
+========================================= */
+
+.pull-string {
+    position: absolute;
+
+    top: 105px;
+
+    left: calc(50% + 43px);
+
+    width: 2px;
+
+    height: 120px;
+
+    background: #73736c;
+
+    transform-origin: top;
+
+    z-index: 7;
+}
+
+
+/* =========================================
+   PULL BUTTON
+========================================= */
+
+.pull-button {
+    position: absolute;
+
+    top: 218px;
+
+    left: calc(50% + 34px);
+
+    width: 20px;
+    height: 20px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d7a96d;
+
+    cursor: grab;
+
+    z-index: 8;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.4);
+
+    touch-action: none;
+}
+
+
+.pull-button:hover {
+    box-shadow:
+        0 0 15px rgba(220, 180, 100, 0.4);
+}
+
+
+.pull-button:active {
+    cursor: grabbing;
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.login-section {
+    width: 380px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateX(60px)
+        scale(0.96);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   LOGIN FORM
+========================================= */
+
+.login-form {
+    padding: 45px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   FORM LIGHT
+========================================= */
+
+.login-form::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -100px;
+    left: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 220, 130, 0.15);
+
+    filter: blur(50px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.login-form h1 {
+    position: relative;
+
+    text-align: center;
+
+    font-size: 32px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle {
+    position: relative;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 13px;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-group input {
+    width: 100%;
+
+    height: 54px;
+
+    padding:
+        0 18px;
+
+    border: 1px solid transparent;
+
+    outline: none;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        0.25s ease;
+}
+
+
+.input-group input::placeholder {
+    color:
+        rgba(255, 255, 255, 0.35);
+}
+
+
+.input-group input:focus {
+    border-color:
+        rgba(255, 220, 120, 0.5);
+
+    background:
+        rgba(255, 255, 255, 0.11);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(255, 220, 120, 0.05);
+}
+
+
+/* =========================================
+   SIGN IN BUTTON
+========================================= */
+
+.sign-in-button {
+    width: 100%;
+
+    height: 54px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #d6b45c,
+            #fff1a8,
+            #d6b45c
+        );
+
+    background-size: 200% 100%;
+
+    color: #111;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease;
+}
+
+
+.sign-in-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(220, 190, 90, 0.3);
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+    min-height: 20px;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #e7c86d;
+}
+
+
+/* =========================================
+   LAMP BULB ตอนเปิดไฟ
+========================================= */
+
+body.lamp-on .bulb {
+    background: #fff4b0;
+
+    opacity: 1;
+
+    box-shadow:
+        0 0 20px #ffe47a,
+        0 0 50px rgba(255, 210, 90, 0.8);
+
+    transition:
+        0.4s ease;
+}
+
+
+/* ตอนปิดไฟ */
+
+body:not(.lamp-on) .bulb {
+    background: #6b675c;
+
+    opacity: 0.4;
+
+    box-shadow: none;
+
+    transition:
+        0.4s ease;
+}
+
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .login-page {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 20px;
+    }
+
+    .lamp-section {
+        height: 330px;
+
+        width: 100%;
+    }
+
+    .login-section {
+        width: 100%;
+
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-form {
+        padding: 30px 22px;
+    }
+
+    .lamp {
+        transform: scale(0.85);
+    }
+}
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Welcome | Login</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =================================
+         LIGHT EFFECT
+    ================================== -->
+
+    <div class="ambient-light"></div>
+
+
+    <!-- =================================
+         MAIN
+    ================================== -->
+
+    <main class="login-page">
+
+
+        <!-- =================================
+             LAMP
+        ================================== -->
+
+        <section class="lamp-section">
+
+            <div class="lamp">
+
+                <!-- Light Glow -->
+                <div class="lamp-glow"></div>
+
+                <!-- Lamp Shade -->
+                <div class="lamp-shade">
+
+                    <div class="bulb"></div>
+
+                </div>
+
+
+                <!-- Lamp Stand -->
+                <div class="lamp-stand"></div>
+
+
+                <!-- Lamp Base -->
+                <div class="lamp-base"></div>
+
+
+                <!-- Pull String -->
+                <div
+                    class="pull-string"
+                    id="pullString"
+                ></div>
+
+
+                <!-- Pull Handle -->
+                <button
+                    class="pull-button"
+                    id="pullButton"
+                    aria-label="Pull lamp switch"
+                ></button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             LOGIN
+        ================================== -->
+
+        <section
+            class="login-section"
+            id="loginSection"
+        >
+
+            <div
+                class="login-form"
+                id="loginForm"
+            >
+
+                <h1>Welcome</h1>
+
+                <p class="subtitle">
+                    Please sign in to continue
+                </p>
+
+
+                <!-- Username -->
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter name"
+                        autocomplete="username"
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter Password"
+                        autocomplete="current-password"
+                    >
+
+                </div>
+
+
+                <!-- Sign In -->
+
+                <button
+                    class="sign-in-button"
+                    id="signInButton"
+                >
+                    Sign In
+                </button>
+
+
+                <!-- Message -->
+
+                <p
+                    class="message"
+                    id="message"
+                ></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =================================
+         GSAP
+    ================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
